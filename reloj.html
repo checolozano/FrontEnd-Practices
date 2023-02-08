@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reloj</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+		}
+		#reloj{
+			font-size: 3em;
+		} 
+		button{
+			font-size: 1em;
+			margin: 0.5em;
+			padding: 0.5em;
+		}
+	</style>
+	<script type="text/javascript">
+		let idReloj= null;
+		let bandera = false;
+		window.onload = function () {
+			// body...
+			desplegarFecha();
+			desplegarHora();
+			document.getElementById("boton").addEventListener("click",activarReloj,false);
+			
+		}
+		const activarReloj = (e) => {
+			bandera = !bandera;
+			if (bandera) {
+				desplegarHora();
+				idReloj = setInterval(desplegarHora,1000);
+				document.getElementById("boton").innerHTML = "Desactivar";
+			} else {
+				if (idReloj!==null) {
+					clearInterval(idReloj);
+					document.getElementById("boton").innerHTML = "Activar";
+					document.getElementById("hora").innerHTML="";
+				}
+			}
+
+		}
+
+		const desplegarFecha = () =>{
+			const hoy = new Date();
+			let fecha = String(hoy.getDate())+"/";
+			fecha += String(hoy.getMonth())+"/";
+			fecha += String(hoy.getFullYear());
+			document.getElementById('fecha').innerHTML = ' Hoy es '+fecha+" ";
+		}
+		const desplegarHora = () => {
+			if (bandera) {
+				const hoy = new Date();
+				const h = ceros(hoy.getHours());
+				const m = ceros(hoy.getMinutes());
+				const s = ceros(hoy.getSeconds());
+				const hora = h+":"+m+":"+s;
+				document.getElementById("hora").innerHTML = "y son las "+ hora+ " horas" ;  
+			}
+
+		}
+		const ceros = (numero) => (numero<10) ? "0"+numero : String(numero);
+
+	</script>
+</head>
+<body>
+	<div id="reloj"><span id="fecha"></span><span id="hora"></span>
+	</div>
+	<button id="boton">Activar</button>
+
+</body>
+</html>

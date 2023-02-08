@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eventos | onmouseover onmouseout</title>
+	<script type="text/javascript">
+		var anya, miBody;
+		window.onload = function () {
+			anya = document.getElementById('anya');
+			miBody = document.getElementsByTagName("body");
+
+			anya.onclick = function(){
+				alert("anyaaaaaaaaaa");
+				}
+			anya.onmouseover = function(){
+				miBody[0].setAttribute("class","rosa");
+				}
+			anya.onmouseout = function () {
+				miBody[0].setAttribute("class","blanco");
+				}
+		}
+
+	</script>
+	<style type="text/css">
+		.rosa{background-color: pink;}
+		.blanco{background-color: white;}
+	</style>
+</head>
+<body>
+<img src="imagenes/anya.png" id="anya"*/>
+</body>
+</html>
