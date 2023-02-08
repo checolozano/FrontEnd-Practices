@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM </title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var noexiste = document.querySelector(".noexiste");
+			if(noexiste.hasAttribute("class")){
+				noexiste.removeAttribute("class");
+
+			}else{
+				console.log("No existe la clase noexiste");
+			}
+		}
+	
+		
+	</script>
+	<style type="text/css">
+		h1{color:blue;}
+		.rojo{color: red;}
+		.verde{color: green;}
+		#amarillo{color: yellow;}
+
+	</style>
+
+
+
+</head>
+<body>
+<h1>Esta es una pagina html</h1>
+<p class="verde">Las siglas DOM significan: </p>
+<p>Este es otro parrafo</p>
+<ul id="amarillo">
+	<li class="rojo">Document</li>
+	<li>Object</li>
+	<li class="rojo noexiste">Model</li>
+</ul>
+</body>
+</html>

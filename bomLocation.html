@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BOM | location</title>
+	<script type="text/javascript">
+		document.write("URL: "+location.href+"<br>");
+		document.write("Hostname: "+location.hostname+"<br>");
+		document.write("Ruta: "+location.pathname+"<br>");
+		document.write("Protocolo: "+location.protocol+"<br>");
+		document.write("Puerto: "+location.port+"<br>");
+		function salta(){
+			location.assign("https://ww.google.com");
+		}
+		
+	</script>
+</head>
+<body>
+	<input type="button" value="Ir a google" onclick="salta()" />
+</body>
+</html>
